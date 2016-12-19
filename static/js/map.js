@@ -25,7 +25,7 @@ var searchMarkerStyles
 
 var timestamp
 var excludedPokemon = []
-var notifiedPokemon = []
+var notifiedPokemon = [149]
 var notifiedRarity = []
 var notifiedMinPerfection = null
 

@@ -871,11 +871,11 @@ var StoreOptions = {
     type: StoreTypes.String
   },
   'remember_select_exclude': {
-    default: [],
+    default: [10,11,13,14,16,17,18,19,20,21,22,41,42,96,128],
     type: StoreTypes.JSON
   },
   'remember_select_notify': {
-    default: [],
+    default: [149],
     type: StoreTypes.JSON
   },
   'remember_select_rarity_notify': {
@@ -899,7 +899,7 @@ var StoreOptions = {
     type: StoreTypes.Boolean
   },
   'showPokestops': {
-    default: true,
+    default: false,
     type: StoreTypes.Boolean
   },
   'showLuredPokestopsOnly': {
