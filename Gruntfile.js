@@ -52,7 +52,8 @@ module.exports = function(grunt) {
           'static/dist/js/mobile.min.js': 'static/dist/js/mobile.built.js',
           'static/dist/js/stats.min.js': 'static/dist/js/stats.built.js',
           'static/dist/js/statistics.min.js': 'static/dist/js/statistics.built.js',
-          'static/dist/js/status.min.js': 'static/dist/js/status.built.js'
+          'static/dist/js/status.min.js': 'static/dist/js/status.built.js',
+          'static/dist/js/pop-it-1.0.min.js': 'static/js/pop-it-1.0.js'
         }
       }
     },

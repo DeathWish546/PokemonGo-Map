@@ -35,6 +35,23 @@
   </head>
   <body id="top">
     <div class="wrapper">
+      <!-- MODAL -->
+      <div class="u-modal">
+          <div class="u-modal-box"><!-- .modal-box--fullscreen -->
+              <div class="u-modal-content">
+                  <div class="u-modal-column--full u-modal-column--animated" data-effect="slide-up">
+                      <h1 class="u-modal-title u-modal-txt--animated"><font size="22"><font face="Lobster Two">Saugaton Scanner</font></font></h1>
+                      <p class="u-modal-txt u-modal-txt--animated">Scans run most nights depending on donations. Check the <a href="https://pokemonsaugaton.slack.com">Slack channel</a> for updates and news!</p>
+                      <p class="u-modal-txt u-modal-txt--animated">Need an invite? Anyone from the slack channel should be able to invite you. If not, contact @Obim</p>
+                      <a href="https://paypal.me/saugaton">Donation Link</a>
+                  </div>
+              </div>
+              <div class="tar">
+                  <button class="u-modal-btn" data-js="close-u-modal">Understood</button>
+              </div>
+          </div>
+      </div>
+      <!-- MODAL -->
       <!-- Header -->
       <header id="header">
         <a href="#nav"><span class="label">Options</span></a>
@@ -135,36 +152,10 @@
           <h3>Location &amp; Search Settings</h3>
           <div>
             <div class="form-control switch-container" style="display:{{is_fixed}}" >
-              <label for="next-location">
-              <h3>Change search location</h3>
-              <input id="next-location" type="text" name="next-location" placeholder="Change search location">
-              </label>
-            </div>
-            <div class="form-control switch-container" style="display:{{is_fixed}}" >
               <h3>Lock search marker</h3>
               <div class="onoffswitch">
                 <input id="lock-marker-switch" type="checkbox" name="lock-marker-switch" class="onoffswitch-checkbox" checked/>
                 <label class="onoffswitch-label" for="lock-marker-switch">
-                <span class="switch-label" data-on="On" data-off="Off"></span>
-                <span class="switch-handle"></span>
-                </label>
-              </div>
-            </div>
-            <div class="form-control switch-container" style="display:{{is_fixed}}" >
-              <h3>Search follows me</h3>
-              <div class="onoffswitch">
-                <input id="geoloc-switch" type="checkbox" name="geoloc-switch" class="onoffswitch-checkbox" checked/>
-                <label class="onoffswitch-label" for="geoloc-switch">
-                <span class="switch-label" data-on="On" data-off="Off"></span>
-                <span class="switch-handle"></span>
-                </label>
-              </div>
-            </div>
-            <div class="form-control switch-container" >
-              <h3>Start map at me</h3>
-              <div class="onoffswitch">
-                <input id="start-at-user-location-switch" type="checkbox" name="start-at-user-location-switch" class="onoffswitch-checkbox" checked/>
-                <label class="onoffswitch-label" for="start-at-user-location-switch">
                 <span class="switch-label" data-on="On" data-off="Off"></span>
                 <span class="switch-handle"></span>
                 </label>
@@ -175,26 +166,6 @@
               <div class="onoffswitch">
                 <input id="search-switch" type="checkbox" name="search-switch" class="onoffswitch-checkbox" checked/>
                 <label class="onoffswitch-label" for="search-switch">
-                <span class="switch-label" data-on="On" data-off="Off"></span>
-                <span class="switch-handle"></span>
-                </label>
-              </div>
-            </div>
-            <div class="form-control switch-container">
-              <h3>Follow me</h3>
-              <div class="onoffswitch">
-                <input id="follow-my-location-switch" type="checkbox" name="follow-my-location-switch" class="onoffswitch-checkbox" checked/>
-                <label class="onoffswitch-label" for="follow-my-location-switch">
-                <span class="switch-label" data-on="On" data-off="Off"></span>
-                <span class="switch-handle"></span>
-                </label>
-              </div>
-            </div>
-            <div class="form-control switch-container" style="display:{{show_scan}}">
-              <h3>Scan here button</h3>
-              <div class="onoffswitch">
-                <input id="scan-here-switch" type="checkbox" name="scan-here-switch" class="onoffswitch-checkbox" checked/>
-                <label class="onoffswitch-label" for="scan-here-switch">
                 <span class="switch-label" data-on="On" data-off="Off"></span>
                 <span class="switch-handle"></span>
                 </label>
@@ -280,6 +251,7 @@
               <li><b>Obim</b> - Map Master</li>
               <li><b>Victoria</b> - PR Ninja</li>
             </ul>
+            Please <a href="http://paypal.me/saugaton">Donate Here</a>
           </div>
         </div>
       </nav>
@@ -337,6 +309,15 @@
     <script src="{{ url_for('static', filename='dist/js/map.common.min.js').lstrip('/') }}"></script>
     <script src="{{ url_for('static', filename='dist/js/map.min.js').lstrip('/') }}"></script>
     <script src="{{ url_for('static', filename='dist/js/stats.min.js').lstrip('/') }}"></script>
+    <script src="{{ url_for('static', filename='dist/js/pop-it-1.0.min.js').lstrip('/') }}"></script>
+    <script>
+      (function(){
+          var p = new Popit({
+              auto: true,
+              veil: "disabled"
+          });
+      }());
+    </script>
     <script defer src="https://maps.googleapis.com/maps/api/js?key={{ gmaps_key }}&amp;callback=initMap&amp;libraries=places,geometry"></script>
   </body>
 </html>
